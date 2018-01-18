@@ -42,9 +42,7 @@ $('form input[type="submit"]').on('click', event => {
 
   for (let i = 0; i <= input; i++) {
     let output = i;
-    if (i === 0) {
-      output = i;    
-    } else if (i % 3 === 0 && i % 5 === 0) {
+    if (i % 15 === 0 && i !== 0) {
       output = 'fizzbuzz';
     } else if (i % 5 === 0) {
       output = 'buzz';
