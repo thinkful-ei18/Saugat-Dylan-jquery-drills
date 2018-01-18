@@ -38,6 +38,7 @@ $('form input[type="submit"]').on('click', (event) => {
 
 $('form input[type="submit"]').on('click', event => {
   event.preventDefault();
+  $('.js-results').html('');
   const input = $('#number-choice').val();
 
   for (let i = 0; i <= input; i++) {
@@ -45,7 +46,7 @@ $('form input[type="submit"]').on('click', event => {
     if (i === 0){
       output = i;
     }
-    if (i % 15 === 0) {
+    else if (i % 15 === 0) {
       output = 'fizzbuzz';
     } else if (i % 5 === 0 ) {
       output = 'buzz';
