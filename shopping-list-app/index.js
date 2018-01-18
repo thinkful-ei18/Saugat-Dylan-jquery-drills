@@ -7,6 +7,7 @@
 $('form button[type="submit"]').on('click', event => {
   event.preventDefault();
   const input = $('form input[type="text"]').val();
+  $('form input[type="text"]').val('');
   
   $('.shopping-list').append(`<li>
   <span class="shopping-item">${input}</span>
@@ -22,10 +23,14 @@ $('form button[type="submit"]').on('click', event => {
 
 });
 
-$('.shopping-list').on("click",'.shopping-item-toggle',event => {
+$('.shopping-list').on('click','.shopping-item-toggle',event => {
   $(event.currentTarget).closest('li').find('span:first').toggleClass('shopping-item__checked');
  
   // listItem.toggleClass('.shopping-item__checked');
 
+});
+
+$('.shopping-list').on('click', '.shopping-item-delete', event => {
+  $(event.currentTarget).closest('li').remove();
 });
 
