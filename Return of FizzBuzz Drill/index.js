@@ -35,3 +35,27 @@ $('form input[type="submit"]').on('click', (event) => {
 
   }
 });
+
+$('form input[type="submit"]').on('click', event => {
+  event.preventDefault();
+  const input = $('#number-choice').val();
+
+  for (let i = 0; i <= input; i++) {
+    let output = i;
+    if (i === 0) {
+      output = i;    
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      output = 'fizzbuzz';
+    } else if (i % 5 === 0) {
+      output = 'buzz';
+    } else if (i % 3 === 0) {
+      output = 'fizz';
+    }
+    $('.js-results').append(`<div class="fizz-buzz-item">
+    <span>${output}</span>
+   </div>`);
+    if (typeof output === 'string') {
+      $('.fizz-buzz-item').last().addClass(output);
+    }
+  }
+});
